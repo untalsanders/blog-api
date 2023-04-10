@@ -6,6 +6,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 @SpringBootApplication
 public class AvorisTechApplication implements CommandLineRunner {
 
@@ -17,6 +20,9 @@ public class AvorisTechApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        log.info("Initializing Avoris Application");
+        LocalDateTime ldt = LocalDateTime.of(1988, 11, 21, 22, 35);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String dtf = ldt.format(formatter);
+        log.info("Initializing Avoris Application at " + dtf);
     }
 }
