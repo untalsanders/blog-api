@@ -1,0 +1,8 @@
+database:
+  db-driver: ${DATABASE_DRIVER}
+  db-driver-class-name: ${DATABASE_DRIVER_CLASS_NAME}
+  db-host: ${DATABASE_HOST}
+  db-port: ${DATABASE_PORT}
+  db-user: ${DATABASE_USER}
+  db-pass: ${DATABASE_PASS}
+  db-name: ${DATABASE_NAME}

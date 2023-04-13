@@ -1,0 +1,126 @@
+openapi: 3.0.3
+
+info:
+  version: 0.0.1
+  title: 'AvorisTech Booking API REST'
+  description: AvorisTech Booking of hotel
+  termsOfService: http://swagger.io/terms/
+  license:
+    name: MIT
+    url: LICENSE
+
+tags:
+  - name: Hotels
+    description: Everything about Hotels
+
+servers:
+  - url: http://localhost:8080/api
+    description: 'DEV: Please configure according to your local environment.'
+  - url: https://sgdev-avoristech-challenge.herokuapp.com/api
+    description: 'STAGING: Testing Server.'
+
+paths:
+  /hotel:
+    get:
+      tags:
+        - Hotels
+      summary: Get all hotels
+      responses:
+        200:
+          description: A JSON array of hotels
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Hotel'
+        404:
+          description: Endpoint no found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      tags:
+        - Hotels
+      summary: Create a hotel
+      responses:
+        200:
+          description: A new hotel have been created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Hotel'
+        404:
+          description: No hotel found for the provided `hotelId`
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /hotel/{hotelId}:
+    parameters:
+      - name: hotelId
+        description: The unique identifier of the hotel
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/HotelId'
+    get:
+      tags:
+        - Hotels
+      summary: Read a hotel
+      responses:
+        200:
+          description: The hotel corresponding to the provided `hotelId`
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Hotel'
+        404:
+          description: No hotel found for the provided `hotelId`
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    HotelId:
+      description: The unique identifier of a hotel
+      type: string
+    Hotel:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          $ref: '#/components/schemas/HotelId'
+        name:
+          type: string
+    Error:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          description: A human readable error message
+          type: string
