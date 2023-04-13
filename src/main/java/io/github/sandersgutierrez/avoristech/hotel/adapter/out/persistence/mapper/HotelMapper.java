@@ -9,17 +9,17 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel="spring")
 public interface HotelMapper {
 
     @Mappings({
-            @Mapping(source = "id", target = "id"),
-            @Mapping(source = "name", target = "name"),
+            @Mapping(source="id", target="id"),
+            @Mapping(source="name", target="name"),
     })
-    public Hotel entityToDomain(HotelEntity hotelEntity);
+    Hotel entityToDomain(HotelEntity hotelEntity);
 
     List<Hotel> toHotels(List<HotelEntity> hotelEntities);
 
     @InheritInverseConfiguration
-    public HotelEntity domainToEntity(Hotel hotel);
+    HotelEntity domainToEntity(Hotel hotel);
 }
