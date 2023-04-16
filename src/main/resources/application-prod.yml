@@ -1,8 +1,8 @@
 database:
-  db-driver: ${DATABASE_DRIVER}
-  db-driver-class-name: ${DATABASE_DRIVER_CLASS_NAME}
+  db-driver: mysql
+  db-driver-class-name: com.mysql.cj.jdbc.Driver
   db-host: ${DATABASE_HOST}
   db-port: ${DATABASE_PORT}
+  db-name: ${DATABASE_NAME}
   db-user: ${DATABASE_USER}
   db-pass: ${DATABASE_PASS}
-  db-name: ${DATABASE_NAME}
