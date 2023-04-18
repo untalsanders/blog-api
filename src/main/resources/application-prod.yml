@@ -1,8 +1,19 @@
+spring:
+  devtools:
+    add-properties: false
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    defer-datasource-initialization: true
+    open-in-view: false
+
 database:
-  db-driver: mysql
-  db-driver-class-name: com.mysql.cj.jdbc.Driver
-  db-host: ${DATABASE_HOST}
-  db-port: ${DATABASE_PORT}
-  db-name: ${DATABASE_NAME}
-  db-user: ${DATABASE_USER}
-  db-pass: ${DATABASE_PASS}
+  db-driver: postgresql
+  db-driver-class-name: org.postgresql.Driver
+  db-host: ${DB_HOST}
+  db-port: ${DB_PORT}
+  db-name: ${DB_NAME}
+  db-user: ${DB_USER}
+  db-pass: ${DB_PASS}
