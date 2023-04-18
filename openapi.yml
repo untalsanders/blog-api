@@ -7,7 +7,7 @@ info:
   termsOfService: http://swagger.io/terms/
   license:
     name: MIT
-    url: LICENSE
+    url: LICENCE
 
 tags:
   - name: Hotels
