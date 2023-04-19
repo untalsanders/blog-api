@@ -9,13 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public class HotelRepository implements HotelRepositoryPort {
 
     private final HotelCrudRepository hotelCrudRepository;
-
     private final HotelMapper hotelMapper;
 
     @Autowired
@@ -26,13 +24,13 @@ public class HotelRepository implements HotelRepositoryPort {
 
     @Override
     public List<Hotel> getAll() {
-        List<HotelEntity> hotelList = (List<HotelEntity>) hotelCrudRepository.findAll();
-        return hotelMapper.toHotels(hotelList);
+        List<HotelEntity> hotelEntityList = hotelCrudRepository.findAll();
+        return hotelMapper.toHotels(hotelEntityList);
     }
 
     @Override
-    public Optional<Hotel> getById(Long id) {
-        return hotelCrudRepository.findById(id).map(hotelMapper::entityToDomain);
+    public Hotel getById(Long hotelId) {
+        return hotelCrudRepository.findById(hotelId).map(hotelMapper::entityToDomain).orElse(null);
     }
 
     @Override
@@ -42,7 +40,16 @@ public class HotelRepository implements HotelRepositoryPort {
     }
 
     @Override
-    public void delete(Long id) {
-        hotelCrudRepository.deleteById(id);
+    public Hotel update(Hotel hotel) {
+        HotelEntity hotelEntity = hotelMapper.domainToEntity(getById(hotel.getId()));
+        hotelEntity.setId(hotel.getId());
+        hotelEntity.setName(hotel.getName());
+        return save(hotelMapper.entityToDomain(hotelEntity));
+    }
+
+    @Override
+    public void delete(Long hotelId) {
+        Hotel hotel = getById(hotelId);
+        hotelCrudRepository.deleteById(hotel.getId());
     }
 }
