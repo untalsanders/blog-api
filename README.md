@@ -35,14 +35,14 @@ This is a demo application for a challenge in selection process for Java Develop
    To `production` you must provide as following variables environment, e.g.
    
    - DB_HOST=127.0.0.1
-   - DB_NAME=my_db
-   - DB_PASS=12345
    - DB_PORT=5432
    - DB_USER=postgres
+   - DB_PASS=12345
+   - DB_NAME=my_db
 
-## 👨🏿‍💻 Credits
+## 👨🏿‍💻 Author
 
-- [Sanders Gutiérrez](https://sandersgutierrez.github.io) - Software Developer
+- [Sanders Gutiérrez](https://sandersgutierrez.github.io) - System Engineer (Sr. Java Developer)
 
 ## :unlock: License
 
