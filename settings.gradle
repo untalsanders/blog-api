@@ -1,4 +1,4 @@
-rootProject.name = 'avoristech'
+rootProject.name = 'avoristech-challenge'
 
 def javaVersion = JavaVersion.current()
 
