@@ -76,7 +76,7 @@ This is a demo application for a challenge in selection process for Java Develop
 
 ## :wolf: Author
 
-- [Sanders Gutiérrez](https://sandersgutierrez.github.io) - System Engineer (Sr. Java Developer)
+- [Sanders Gutiérrez](https://sandersgutierrez.github.io) - System Engineer (Java Developer)
 
 ## :unlock: License
 
