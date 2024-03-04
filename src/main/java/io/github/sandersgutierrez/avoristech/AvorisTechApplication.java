@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class AvorisTechApplication implements CommandLineRunner {
 
-    public static final Logger log = LoggerFactory.getLogger(AvorisTechApplication.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(AvorisTechApplication.class);
 
     public static void main(String[] args) {
         SpringApplication application = new SpringApplication(AvorisTechApplication.class);
@@ -20,6 +20,6 @@ public class AvorisTechApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        log.info("\uD83D\uDE80 Avoris Application is running at http://localhost:9090 \uD83D\uDE80");
+        LOGGER.info("\uD83D\uDE80 Avoris Application is running at http://localhost:9090 \uD83D\uDE80");
     }
 }

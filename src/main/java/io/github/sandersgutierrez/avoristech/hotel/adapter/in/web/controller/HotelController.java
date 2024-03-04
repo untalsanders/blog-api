@@ -1,6 +1,5 @@
 package io.github.sandersgutierrez.avoristech.hotel.adapter.in.web.controller;
 
-import io.github.sandersgutierrez.avoristech.hotel.application.exception.NoSuchElementFoundException;
 import io.github.sandersgutierrez.avoristech.hotel.application.service.HotelService;
 import io.github.sandersgutierrez.avoristech.hotel.domain.Hotel;
 import org.springframework.beans.factory.annotation.Autowired;

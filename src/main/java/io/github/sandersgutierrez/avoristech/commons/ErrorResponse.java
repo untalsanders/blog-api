@@ -1,5 +1,8 @@
 package io.github.sandersgutierrez.avoristech.commons;
 
+import lombok.Getter;
+
+@Getter
 public class ErrorResponse {
     private final int status;
     private final String message;
@@ -8,18 +11,6 @@ public class ErrorResponse {
     public ErrorResponse(int status, String message) {
         this.status = status;
         this.message = message;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public String getStackTrace() {
-        return stackTrace;
     }
 
     public void setStackTrace(String stackTrace) {

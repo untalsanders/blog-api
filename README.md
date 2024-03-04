@@ -10,7 +10,7 @@ This is a demo application for a challenge in selection process for Java Develop
    1. Install Java 17, go link for install [SDKMAN](https://sdkman.io/install)
 
       ```shell
-      sdk install java x.y.z-open
+      sdk install java x.y.z-vendor
       ```
 
    2. Set it as your default JVM
@@ -22,7 +22,7 @@ This is a demo application for a challenge in selection process for Java Develop
    3. Clone this repository:
 
       ```shell
-      git clone https://github.com/sandersgutierrez/avoristech-challenge.git
+      git clone https://github.com/untalsanders/avoristech-challenge.git
       ```
 
    4. Run application
@@ -76,7 +76,7 @@ This is a demo application for a challenge in selection process for Java Develop
 
 ## :wolf: Author
 
-- [Sanders Gutiérrez](https://sandersgutierrez.github.io) - System Engineer (Java Developer)
+- [Sanders Gutiérrez](https://untalsanders.github.io) - System Engineer (Java Developer)
 
 ## :unlock: License
 
