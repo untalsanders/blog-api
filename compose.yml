@@ -1,0 +1,56 @@
+version: '3.9'
+
+services:
+  # Spring Boot App
+  avoristech-app:
+    container_name: avoristech-app-java
+    build:
+      context: .
+      dockerfile: Dockerfile
+    platform: linux/amd64
+    environment:
+      DB_USER: postgres
+      DB_PASS: 12345
+      DB_HOST: avoristech-db
+      DB_PORT: 5432
+      DB_NAME: avoristech
+    ports:
+      - "8080:8080"
+    depends_on:
+      - avoristech-db
+    networks:
+      - avoristech
+
+  # Database
+  avoristech-db:
+    container_name: avoristech-app-db-postgres
+    image: postgres
+    restart: unless-stopped
+    ports:
+      - "54320:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: avoristech
+    networks:
+      - avoristech
+
+  # Management Database
+  avoristech-pgadmin:
+    container_name: avoristech-app-pgadmin
+    image: dpage/pgadmin4
+    restart: unless-stopped
+    depends_on:
+      - avoristech-db
+    ports:
+      - "8081:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: 'avoristech@domain.com'
+      PGADMIN_DEFAULT_PASSWORD: 12345
+    networks:
+      - avoristech
+
+networks:
+  # Avoristech Network
+  avoristech:
+    name: avoristech-network

@@ -2,7 +2,7 @@
 
 ## :tea: Introduction
 
-This is a demo application for a challenge in selection process for Java Developer in the company 
+This is a demo application for a challenge in selection process for Java Developer in the company
 [MinData](https://www.linkedin.com/company/mindata/).
 
 ## :checkered_flag: How To Start
@@ -57,7 +57,7 @@ This is a demo application for a challenge in selection process for Java Develop
 
       ```shell
       # Build image
-      docker build -t sandersgutierrez/avoristech-challenge:latest .
+      docker build -t sandersgutierrez/avoristech:latest .
       ```
 
    2. **Run a container**
@@ -66,7 +66,7 @@ This is a demo application for a challenge in selection process for Java Develop
       # Create and run a container
       docker run -p 8080:8080 --name avoristech-app \
           --env PORT=8080 \
-          --env DB_HOST=XXX.XXX.XXX.XXX \
+          --env DB_HOST=localhost \
           --env DB_PORT=5432 \
           --env DB_NAME=avoristech \
           --env DB_USER=postgres \
