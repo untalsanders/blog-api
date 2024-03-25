@@ -1,4 +1,4 @@
-# MinData Challenge
+# Blog RESTful API
 
 ## :tea: Introduction
 
