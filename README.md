@@ -1,10 +1,5 @@
 # Blog RESTful API
 
-## :tea: Introduction
-
-This is a demo application for a challenge in selection process for Java Developer in the company
-[MinData](https://www.linkedin.com/company/mindata/).
-
 ## :checkered_flag: How To Start
 
    1. Install Java 17, go link for install [SDKMAN](https://sdkman.io/install)
@@ -22,7 +17,7 @@ This is a demo application for a challenge in selection process for Java Develop
    3. Clone this repository:
 
       ```shell
-      git clone https://github.com/untalsanders/avoristech-challenge.git
+      git clone https://github.com/untalsanders/blog-api.git
       ```
 
    4. Run application
@@ -48,7 +43,7 @@ This is a demo application for a challenge in selection process for Java Develop
 
       ```shell
       # Prod Environment
-      DB_HOST=localhost DB_PORT=5432 DB_USER=postgres DB_PASS=12345 DB_NAME=avoristech ./gradlew bootRun --args='--spring.profiles.active=prod --server.port=8080'
+      DB_HOST=localhost DB_PORT=5432 DB_USER=postgres DB_PASS=12345 DB_NAME=blog ./gradlew bootRun --args='--spring.profiles.active=prod --server.port=8080'
       ```
 
 ## :whale: Build and Run with Docker
@@ -57,21 +52,21 @@ This is a demo application for a challenge in selection process for Java Develop
 
       ```shell
       # Build image
-      docker build -t sandersgutierrez/avoristech:latest .
+      docker build -t sandersgutierrez/blog-api:latest .
       ```
 
    2. **Run a container**
 
       ```shell
       # Create and run a container
-      docker run -p 8080:8080 --name avoristech-app \
+      docker run -p 8080:8080 --name blog-app \
           --env PORT=8080 \
           --env DB_HOST=localhost \
           --env DB_PORT=5432 \
-          --env DB_NAME=avoristech \
+          --env DB_NAME=blog \
           --env DB_USER=postgres \
           --env DB_PASS=12345 \
-          sandersgutierrez/avoristech:latest
+          sandersgutierrez/blog-api:latest
       ```
 
 ## :wolf: Author
@@ -80,4 +75,4 @@ This is a demo application for a challenge in selection process for Java Develop
 
 ## :unlock: License
 
-This project is open-sourced software licensed under the [MIT licence](LICENCE).
+This project is software licensed under the [BSL 1.0 license](LICENSE).
