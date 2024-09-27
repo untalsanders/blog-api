@@ -1,6 +1,6 @@
 server:
   servlet:
-    context-path: /
+    context-path: /api
   compression:
     enabled: true
     mime-types: text/html,text/xml,text/css,text/javascript,application/javascript,application/json
@@ -14,5 +14,3 @@ spring:
     url: jdbc:${database.db-driver}://${database.db-host}:${database.db-port}/${database.db-name}
     username: ${database.db-user}
     password: ${database.db-pass}
-  mvc:
-    throw-exception-if-no-handler-found: true
