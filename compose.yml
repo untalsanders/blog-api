@@ -2,8 +2,8 @@ version: '3.9'
 
 services:
   # Spring Boot App
-  avoristech-app:
-    container_name: avoristech-app-java
+  blog-app:
+    container_name: blog-app-java
     build:
       context: .
       dockerfile: Dockerfile
@@ -11,19 +11,19 @@ services:
     environment:
       DB_USER: postgres
       DB_PASS: 12345
-      DB_HOST: avoristech-db
+      DB_HOST: blog-db
       DB_PORT: 5432
-      DB_NAME: avoristech
+      DB_NAME: blog
     ports:
       - "8080:8080"
     depends_on:
-      - avoristech-db
+      - blog-db
     networks:
-      - avoristech
+      - blog
 
   # Database
-  avoristech-db:
-    container_name: avoristech-app-db-postgres
+  blog-db:
+    container_name: blog-app-db-postgres
     image: postgres
     restart: unless-stopped
     ports:
@@ -31,26 +31,26 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 12345
-      POSTGRES_DB: avoristech
+      POSTGRES_DB: blog
     networks:
-      - avoristech
+      - blog
 
   # Management Database
-  avoristech-pgadmin:
-    container_name: avoristech-app-pgadmin
+  blog-pgadmin:
+    container_name: blog-app-pgadmin
     image: dpage/pgadmin4
     restart: unless-stopped
     depends_on:
-      - avoristech-db
+      - blog-db
     ports:
       - "8081:80"
     environment:
-      PGADMIN_DEFAULT_EMAIL: 'avoristech@domain.com'
+      PGADMIN_DEFAULT_EMAIL: 'blog@domain.com'
       PGADMIN_DEFAULT_PASSWORD: 12345
     networks:
-      - avoristech
+      - blog
 
 networks:
-  # Avoristech Network
-  avoristech:
-    name: avoristech-network
+  # Blog Network
+  blog:
+    name: blog-network

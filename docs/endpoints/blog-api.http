@@ -1,0 +1,42 @@
+###
+# group: Contacts
+# @name Retrieve all posts
+GET {{BASE_URL}}/api/posts
+
+###
+# group: Post
+# @name Create a post
+POST {{BASE_URL}}/api/posts
+Content-Type: application/json
+
+{
+    "id": 3,
+    "title": "Post #3",
+    "content": "Content of post 3"
+}
+
+
+###
+# group: Post
+@postId=2
+# @name Retrieve a post by ID
+GET {{BASE_URL}}/api/posts/{{postId}}
+
+
+###
+# group: Post
+# @name Update a post
+PUT {{BASE_URL}}/api/posts
+Content-Type: application/json
+
+{
+    "id": 0,
+    "title": "",
+    "content": ""
+}
+
+
+###
+# group: Post
+# @name Delete a post
+DELETE {{BASE_URL}}/api/posts/{{postId}}
