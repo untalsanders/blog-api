@@ -1,13 +1,12 @@
 package io.github.untalsanders.blog.infrastructure.persistence.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 
 import java.io.Serializable;
 
-@Data
-@AllArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name = "posts")
 public class PostEntity implements Serializable {
@@ -21,5 +20,6 @@ public class PostEntity implements Serializable {
     @Column(nullable = false)
     private String content;
 
-    public PostEntity() {}
+    @Column(nullable = false)
+    private String author;
 }

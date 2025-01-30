@@ -1,7 +1,7 @@
 package io.github.untalsanders.blog.infrastructure.persistence.mapper;
 
-import io.github.untalsanders.blog.infrastructure.persistence.entity.PostEntity;
 import io.github.untalsanders.blog.domain.model.Post;
+import io.github.untalsanders.blog.infrastructure.persistence.entity.PostEntity;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -16,6 +16,7 @@ public interface PostMapper {
             @Mapping(source="id", target="id"),
             @Mapping(source="title", target="title"),
             @Mapping(source="content", target="content"),
+            @Mapping(source="author", target="author")
     })
     Post entityToDomain(PostEntity postEntity);
 

@@ -7,8 +7,16 @@ server:
     min-response-size: 1024
 
 spring:
+  application:
+    name: blog
   profiles:
-    active: prod
+    active: dev
+  jpa:
+    open-in-view: false
+  sql:
+    init:
+      schema-locations: classpath*:db/${database.db-engine:hsqldb}/schema.sql
+      data-locations: classpath*:db/${database.db-engine:hsqldb}/data.sql
   datasource:
     driver-class-name: ${database.db-driver-class-name}
     url: jdbc:${database.db-driver}://${database.db-host}:${database.db-port}/${database.db-name}
