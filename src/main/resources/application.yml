@@ -1,18 +1,24 @@
 server:
   servlet:
-    context-path: /
+    context-path: /api
   compression:
     enabled: true
     mime-types: text/html,text/xml,text/css,text/javascript,application/javascript,application/json
     min-response-size: 1024
 
 spring:
+  application:
+    name: blog
   profiles:
-    active: prod
+    active: dev
+  jpa:
+    open-in-view: false
+  sql:
+    init:
+      schema-locations: classpath*:db/${database.db-engine:hsqldb}/schema.sql
+      data-locations: classpath*:db/${database.db-engine:hsqldb}/data.sql
   datasource:
     driver-class-name: ${database.db-driver-class-name}
     url: jdbc:${database.db-driver}://${database.db-host}:${database.db-port}/${database.db-name}
     username: ${database.db-user}
     password: ${database.db-pass}
-  mvc:
-    throw-exception-if-no-handler-found: true
