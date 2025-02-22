@@ -1,4 +1,4 @@
-package io.github.untalsanders.blog.infrastructure.web.rest.advice;
+package io.github.untalsanders.blog.infrastructure.rest.advice;
 
 import io.github.untalsanders.blog.domain.exception.NoSuchElementFoundException;
 import io.github.untalsanders.blog.domain.exception.SuchElementAlreadyExistsException;

@@ -1,4 +1,4 @@
-package io.github.untalsanders.blog.infrastructure.web.rest.controller;
+package io.github.untalsanders.blog.infrastructure.rest.controller;
 
 import io.github.untalsanders.blog.application.service.PostService;
 import io.github.untalsanders.blog.domain.model.Post;
