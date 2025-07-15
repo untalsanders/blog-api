@@ -5,7 +5,6 @@ import io.github.untalsanders.blog.domain.repository.PostRepository;
 import io.github.untalsanders.blog.infrastructure.persistence.crud.PostCrudRepository;
 import io.github.untalsanders.blog.infrastructure.persistence.entity.PostEntity;
 import io.github.untalsanders.blog.infrastructure.persistence.mapper.PostMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -17,7 +16,6 @@ public class JpaPostRepository implements PostRepository {
     private final PostCrudRepository postCrudRepository;
     private final PostMapper postMapper;
 
-    @Autowired
     public JpaPostRepository(PostCrudRepository postCrudRepository, PostMapper postMapper) {
         this.postCrudRepository = postCrudRepository;
         this.postMapper = postMapper;

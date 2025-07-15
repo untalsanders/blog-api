@@ -6,11 +6,13 @@ server:
     mime-types: text/html,text/xml,text/css,text/javascript,application/javascript,application/json
     min-response-size: 1024
 
+engine: h2
+
 spring:
-  profiles:
-    active: prod
-  datasource:
-    driver-class-name: ${database.db-driver-class-name}
-    url: jdbc:${database.db-driver}://${database.db-host}:${database.db-port}/${database.db-name}
-    username: ${database.db-user}
-    password: ${database.db-pass}
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+  sql:
+    init:
+      schema-locations: classpath*:db/${engine}/schema.sql
