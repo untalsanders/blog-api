@@ -8,4 +8,5 @@ target
 ### Intellij IDEA ###
 .idea/
 
-.env
+### HSQLDB ###
+data/
